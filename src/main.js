@@ -6,8 +6,11 @@ import router from './router'
 // 引入饿了吗UI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+// 导入axios插件
+import MyServerHttp from '@/plugins/http.js'
 
 Vue.use(ElementUI)
+Vue.use(MyServerHttp)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
