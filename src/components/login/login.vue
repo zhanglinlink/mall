@@ -24,20 +24,22 @@ export default {
         }
     },
     methods:{
-        handleLogin(){
-            this.$http.post('login',this.formdata).then((res)=>{
-                // console.log(res)
+        async handleLogin(){
+            const res = await this.$http.post('login',this.formdata)
+                
                 const{data,meta:{msg,status}} = res.data
 
                 if(status === 200){
                     //登录成功
+                    // 0 保存token
+                    localStorage.setItem('token',data.token)
                     // 1 跳转home
-                    // this.$router.push({name:'home'})
+                    this.$router.push({name:'home'})
                     this.$message.success(msg)
                 }else{
                     this.$message.error(msg)
                 }
-            })
+           
         }
     }
 }
