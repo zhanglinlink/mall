@@ -5,6 +5,8 @@ import App from './App'
 import router from './router'
 // 引入饿了吗UI
 import ElementUI from 'element-ui'
+// 导入自定义组件
+import MyBread from '@/components/cuscom/myBread.vue'
 import 'element-ui/lib/theme-chalk/index.css'
 // 导入axios插件
 import MyServerHttp from '@/plugins/http.js'
@@ -21,6 +23,8 @@ Vue.filter('fmtdata', (v) => {
 })
 
 /* eslint-disable no-new */
+// 自定义全局组件
+Vue.component(MyBread.name, MyBread)
 new Vue({
   el: '#app',
   router,

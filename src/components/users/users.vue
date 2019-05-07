@@ -34,7 +34,7 @@
                 </el-switch>
             </template>
         </el-table-column>
-        <el-table-column prop="address" label="状态">
+        <el-table-column prop="address" label="操作">
             <template slot-scope="scope">
                 <el-button @click="showEditMsgBox(scope.row)" size="mini" plain type="primary" icon="el-icon-edit" circle></el-button>
                 <el-button @click="showDeleUserMsgBox(scope.row.id)" size="mini" plain type="danger" icon="el-icon-delete" circle></el-button>
@@ -258,8 +258,6 @@ export default {
         },
         // 获取列表发发送请求
         async getUserList() {
-            const AUTH_TOKEN = localStorage.getItem('token')
-            this.$http.defaults.headers.common['Authorization'] = AUTH_TOKEN;
             // 请求路径： users
             // 请求方法： get
             // 请求参数
